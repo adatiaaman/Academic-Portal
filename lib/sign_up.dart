@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dep_2/utils.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -6,6 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 // import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+const List<String> list = <String>['Student', 'Instructor', 'Advisor'];
 
 class SignUp extends StatefulWidget {
   final Function() onClickedSignIn;
@@ -20,6 +23,7 @@ class _SignUpState extends State<SignUp> {
   final formKey = GlobalKey<FormState>();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+  String userType = 'Student';
 
   @override
   void dispose() {
@@ -58,7 +62,7 @@ class _SignUpState extends State<SignUp> {
                   controller: passwordController,
                   cursorColor: Colors.black,
                   textInputAction: TextInputAction.done,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                       labelText: 'Password'), // , icon: Icons.remove_red_eye
                   obscureText: true,
                   autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -66,6 +70,22 @@ class _SignUpState extends State<SignUp> {
                       ? 'Enter min. 8 characters'
                       : null,
                 ),
+                const SizedBox(
+                  height: 12,
+                ),
+                DropdownButton<String>(
+                    items: list.map<DropdownMenuItem<String>>((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(value),
+                      );
+                    }).toList(),
+                    value: userType,
+                    onChanged: (String? value) {
+                      setState(() {
+                        userType = value!;
+                      });
+                    }),
                 const SizedBox(
                   height: 20,
                 ),
@@ -120,15 +140,22 @@ class _SignUpState extends State<SignUp> {
     //     child: CircularProgressIndicator(),
     //   ),
     // );
+    final FirebaseFirestore _firestore = FirebaseFirestore.instance;
     try {
       await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: emailController.text.trim(),
         password: passwordController.text.trim(),
       );
+      _firestore.collection('User').doc(emailController.text.trim()).set({
+        'Email': emailController.text.trim(),
+        'Password': passwordController.text.trim(),
+        'Type': userType
+      });
     } on FirebaseAuthException catch (e) {
       print(e);
       Utils.showSnackBar(e.message);
     }
+
     // navigatorKey.currentState!.popUntil((route) => route.isFirst);
   }
 }
