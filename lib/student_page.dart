@@ -123,7 +123,7 @@ class _StudentPageState extends State<StudentPage> {
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      stud.add({'${course[index].toString()}': 0});
+                      stud.add({'${course[index].toString()}': '0'});
                       _db
                           .collection('Student')
                           .doc(user.email!)
