@@ -1,5 +1,5 @@
-import 'package:dep_2/log_in.dart';
-import 'package:dep_2/sign_up.dart';
+import 'package:dep_2/authentification/log_in.dart';
+import 'package:dep_2/authentification/sign_up.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 

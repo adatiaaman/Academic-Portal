@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:dep_2/home_page.dart';
-import 'package:dep_2/utils.dart';
+import 'package:dep_2/screens/home_page.dart';
+import 'package:dep_2/utility/utils.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';

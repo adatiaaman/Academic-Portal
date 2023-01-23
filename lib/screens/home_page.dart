@@ -1,10 +1,10 @@
 import 'dart:html';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:dep_2/advisor_page.dart';
-import 'package:dep_2/instructor_page.dart';
-import 'package:dep_2/student_page.dart';
-import 'package:dep_2/user_model.dart';
+import 'package:dep_2/screens/advisor_page.dart';
+import 'package:dep_2/screens/instructor_page.dart';
+import 'package:dep_2/screens/student_page.dart';
+import 'package:dep_2/models/user_model.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';

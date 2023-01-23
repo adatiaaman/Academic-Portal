@@ -1,12 +1,12 @@
-import 'package:dep_2/auth_page.dart';
-import 'package:dep_2/log_in.dart';
-import 'package:dep_2/start_up.dart';
-import 'package:dep_2/utils.dart';
+import 'package:dep_2/authentification/auth_page.dart';
+import 'package:dep_2/authentification/log_in.dart';
+import 'package:dep_2/screens/start_up.dart';
+import 'package:dep_2/utility/utils.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:dep_2/home_page.dart';
+import 'package:dep_2/screens/home_page.dart';
 import 'dart:html';
 
 import 'firebase_options.dart';

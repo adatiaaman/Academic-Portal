@@ -1,8 +1,8 @@
-import 'package:dep_2/auth_page.dart';
-import 'package:dep_2/home_page.dart';
-import 'package:dep_2/log_in.dart';
-import 'package:dep_2/sign_up.dart';
-import 'package:dep_2/verify_email.dart';
+import 'package:dep_2/authentification/auth_page.dart';
+import 'package:dep_2/screens/home_page.dart';
+import 'package:dep_2/authentification/log_in.dart';
+import 'package:dep_2/authentification/sign_up.dart';
+import 'package:dep_2/authentification/verify_email.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';

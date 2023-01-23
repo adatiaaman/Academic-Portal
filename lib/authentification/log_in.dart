@@ -1,8 +1,8 @@
-import 'package:dep_2/forgot_password.dart';
-import 'package:dep_2/home_page.dart';
+import 'package:dep_2/authentification/forgot_password.dart';
+import 'package:dep_2/screens/home_page.dart';
 import 'package:dep_2/main.dart';
-import 'package:dep_2/start_up.dart';
-import 'package:dep_2/utils.dart';
+import 'package:dep_2/screens/start_up.dart';
+import 'package:dep_2/utility/utils.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
