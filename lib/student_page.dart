@@ -1,6 +1,7 @@
 import 'dart:html';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dep_2/student_drop_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -139,6 +140,22 @@ class _StudentPageState extends State<StudentPage> {
                 ],
               );
             },
+          ),
+        ),
+        const SizedBox(
+          height: 12,
+        ),
+        TextButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => StudentDrop(),
+              ),
+            );
+          },
+          child: const Text(
+            'Drop Courses',
           ),
         ),
         const SizedBox(
