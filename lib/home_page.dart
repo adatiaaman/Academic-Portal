@@ -55,6 +55,10 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Container(
+              child: Text(
+                  'DEP Team: T11\nAman Pankaj Adatia - 2020CSB1154\nSanyam Walia - 2020CSB1122\nAnubhav Kataria - 2020CSB1073\nDileep Kumar Kanwat - 2020CSB1085\n\n'),
+            ),
             const Text(
               'Logged In as',
               style: TextStyle(

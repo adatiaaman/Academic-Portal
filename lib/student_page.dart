@@ -43,12 +43,16 @@ Future<List> getStu() async {
   return stu;
 }
 
+List<String> inst = [];
+
 Future<List> getCourse() async {
   List course = [];
+
   final document = await _db.collection('Course').get().then((value) {
     value.docs.forEach((element) {
       final cc = element.data()['details'];
       for (var c in cc) {
+        inst.add(element.id);
         course.add(c);
       }
       // course.add(element.data());
@@ -116,14 +120,15 @@ class _StudentPageState extends State<StudentPage> {
                     margin: const EdgeInsets.all(2),
                     child: Center(
                       child: Text(
-                        '${course[index].toString()}', // '${req[index]}',
+                        '${course[index].toString()} (${inst[index]})', // '${req[index]}',
                         style: TextStyle(fontSize: 18),
                       ),
                     ),
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      stud.add({'${course[index].toString()}': '0'});
+                      // stud.add({'${course[index].toString()}': '0'});
+                      stud.add({'${course[index]}': 'Requested'});
                       _db
                           .collection('Student')
                           .doc(user.email!)

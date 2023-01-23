@@ -7,6 +7,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:dep_2/home_page.dart';
+import 'dart:html';
 
 import 'firebase_options.dart';
 

@@ -41,7 +41,7 @@ Future<List> getReq() async {
           vv.map((key, value) => MapEntry(key.toString(), value.toString()));
 
       var k = Tuple2(vm.entries.first, c.email);
-      // if (k.item1.value == '0') {
+      // if (k.item1.value == '0')
       req.add(k);
     }
   }
@@ -106,7 +106,8 @@ class _AdvisorPageState extends State<AdvisorPage> {
                             if (course.elementAt(i).key ==
                                 req[index].item1.key) {
                               // course.elementAt(i).value = "1";
-                              temp.add(MapEntry(req[index].item1.key, "1"));
+                              temp.add(
+                                  MapEntry(req[index].item1.key, "Accepted"));
                             } else {
                               temp.add(course.elementAt(i));
                             }
@@ -139,7 +140,8 @@ class _AdvisorPageState extends State<AdvisorPage> {
                             if (course.elementAt(i).key ==
                                 req[index].item1.key) {
                               // course.elementAt(i).value = "1";
-                              temp.add(MapEntry(req[index].item1.key, "2"));
+                              temp.add(
+                                  MapEntry(req[index].item1.key, "Rejected"));
                             } else {
                               temp.add(course.elementAt(i));
                             }
