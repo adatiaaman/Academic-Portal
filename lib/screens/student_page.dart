@@ -134,6 +134,10 @@ class _StudentPageState extends State<StudentPage> {
                           .collection('Student')
                           .doc(user.email!)
                           .set({'one': stud});
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) => super.widget));
                     },
                     child: Text('Enroll'),
                   ),
@@ -143,23 +147,30 @@ class _StudentPageState extends State<StudentPage> {
           ),
         ),
         const SizedBox(
-          height: 12,
+          height: 18,
         ),
-        TextButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => StudentDrop(),
-              ),
-            );
-          },
-          child: const Text(
-            'Drop Courses',
+        Container(
+          height: 40,
+          width: 250,
+          decoration: BoxDecoration(
+              color: Colors.blue, borderRadius: BorderRadius.circular(20)),
+          child: TextButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => StudentDrop(),
+                ),
+              );
+            },
+            child: const Text(
+              'Drop Courses',
+              style: TextStyle(color: Colors.white, fontSize: 25),
+            ),
           ),
         ),
         const SizedBox(
-          height: 12,
+          height: 18,
         ),
         Text(
           'Status: ',

@@ -82,6 +82,10 @@ class _StudentDropState extends State<StudentDrop> {
                           .collection('Student')
                           .doc(user.email!)
                           .update({'one': diy});
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) => super.widget));
                     },
                     child: Text('Drop'),
                   ),

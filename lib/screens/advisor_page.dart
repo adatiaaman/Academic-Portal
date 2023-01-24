@@ -125,6 +125,13 @@ class _AdvisorPageState extends State<AdvisorPage> {
                             .update({
                           'one': diy,
                         });
+                        temp.removeRange(0, temp.length);
+                        diy.removeRange(0, diy.length);
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (BuildContext context) =>
+                                    super.widget));
                       },
                       child: Text('Accept'),
                     ),
@@ -159,6 +166,11 @@ class _AdvisorPageState extends State<AdvisorPage> {
                             .set({
                           'one': diy,
                         });
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (BuildContext context) =>
+                                    super.widget));
                       },
                       child: Text('Reject'),
                     ),

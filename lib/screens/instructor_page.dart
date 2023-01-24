@@ -66,6 +66,10 @@ class _InstructorPageState extends State<InstructorPage> {
           onPressed: () {
             addItemToList();
             _db.collection('Course').doc(user.email!).set({'details': course});
+            // Navigator.pushReplacement(
+            //               context,
+            //               MaterialPageRoute(
+            //                   builder: (BuildContext context) => super.widget));
           },
         ),
         Expanded(
