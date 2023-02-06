@@ -19,6 +19,11 @@ class SignUp extends StatefulWidget {
   State<SignUp> createState() => _SignUpState();
 }
 
+bool checkrpr(String email) {
+  RegExp regex = RegExp(r"[a-zA-Z0-9]+@iitrpr\.ac\.in");
+  return regex.hasMatch(email);
+}
+
 class _SignUpState extends State<SignUp> {
   final formKey = GlobalKey<FormState>();
   final emailController = TextEditingController();
@@ -52,10 +57,11 @@ class _SignUpState extends State<SignUp> {
                   textInputAction: TextInputAction.next,
                   decoration: InputDecoration(labelText: 'Email'),
                   autovalidateMode: AutovalidateMode.onUserInteraction,
-                  validator: (email) =>
-                      email != null && !EmailValidator.validate(email)
-                          ? 'Enter a valid email'
-                          : null,
+                  validator: (email) => email != null &&
+                          !EmailValidator.validate(email) &&
+                          checkrpr(email) == true
+                      ? 'Enter a valid email'
+                      : null,
                 ),
                 const SizedBox(height: 4),
                 TextFormField(
